@@ -1,5 +1,5 @@
 
-// ESPN 4 factors boxscore
+// fourfactors boxscore
 // version 0.9
 // 2012-10-31
 //
@@ -18,7 +18,7 @@
 //
 //
 // ==UserScript==
-// @name          ESPN4Factors
+// @name          fourfactors
 // @description   Adds team 4-factors stats to ESPN NBA boxscores
 // @include       http://*.espn.go.com/nba/boxscore?gameId=*
 // @include       http://*.espn.go.com/nba/boxscore/_/id/*
