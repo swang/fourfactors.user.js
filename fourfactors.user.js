@@ -111,7 +111,6 @@ var ftcH = p3cH.nextSibling;
 var ftrH = grabMadeAttempts(ftcH)
 var ftmH = ftrH[0]
 var ftaH = ftrH[1]
-console.log(ftmH,ftaH)
 var orcH = ftcH.nextSibling;
 var drcH = orcH.nextSibling;
 var orH = parseInt(orcH.textContent);
@@ -400,7 +399,6 @@ factors.appendChild(hRow);
 var factorsDiv = doc.createElement("div");
 factorsDiv.setAttribute('align','center');
 factorsDiv.appendChild(factors);
-console.log(factorsDiv)
 
 //var tabberNodes = document.querySelector('.gp-body')
 var tabber = document.querySelector('.gp-body');
