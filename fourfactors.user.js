@@ -1,7 +1,7 @@
 
 // ESPN 4 factors boxscore
-// version 0.8.2
-// 2010-02-07
+// version 0.9
+// 2012-10-31
 //
 // --------------------------------------------------------------------
 //
@@ -22,10 +22,14 @@
 // @description   Adds team 4-factors stats to ESPN NBA boxscores
 // @include       http://*.espn.go.com/nba/boxscore?gameId=*
 // @include       http://*.espn.go.com/nba/boxscore/_/id/*
+// @include       http://espn.go.com/nba/boxscore/_/id/*
+// @include       http://espn.go.com/nba/boxscore/_/id/*
 // ==/UserScript==
 
 /* BEGIN LICENSE BLOCK
 Copyright (C) 2007 cherokee_acb
+Copyright (C) 2012 @swang
+This version maintained at http://github.com/swang
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -411,8 +415,5 @@ tabber.insertBefore(factorsDiv, tabber.firstChild);
 // 2008-11-01 - 0.5 - Fixed problem with live games in the new season
 // 2009-01-10 - 0.6 - Updated to new ESPN format with a +/- column
 // 2009-10-31 - 0.7 - Updated to 2009-10 format (fixes by philrl and Ben F. from the APBRmetrics board)
-// 2010-02-07 - 0.8.2 - Updated to new 2010 format 
-
-
-
-
+// 2010-02-07 - 0.8.2 - Updated to new 2010 format
+// 2012-10-31 - 0.9 - New revised updates for new 2012 format.
