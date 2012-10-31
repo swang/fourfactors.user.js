@@ -12,4 +12,5 @@ What is the four factors?
 Just a random link from a Google Search:
 
 http://www.nba.com/dleague/news/ap_hoops_four_factors_playoff_2012_03_30.html
+
 http://www.basketball-reference.com/about/factors.html
