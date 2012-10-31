@@ -74,12 +74,12 @@ fieldGoalsMadeAway = fieldGoalsResultsAway[0]
 fieldGoalsAttemptsAway = fieldGoalsResultsAway[1]
 
 
-var 3ptFGCellAway = fieldGoalsCellAway.nextSibling;
-var 3ptFGResultsAway = grabMadeAttempts(3ptFGCellAway)
-var 3ptFGMadeAway = 3ptFGResultsAway[0]
-var 3ptFGAttemptsAway = 3ptFGResultsAway[1]
+var threePointFGCellAway = fieldGoalsCellAway.nextSibling;
+var threePointFGResultsAway = grabMadeAttempts(threePointFGCellAway)
+var threePointFGMadeAway = threePointFGResultsAway[0]
+var threePointFGAttemptsAway = threePointFGResultsAway[1]
 
-var freeThrowCellAway = 3ptFGCellAway.nextSibling;
+var freeThrowCellAway = threePointFGCellAway.nextSibling;
 var freeThrowResultsAway = grabMadeAttempts(freeThrowCellAway)
 var freeThrowMadeAway = freeThrowResultsAway[0]
 var freeThrowAttemptsAway = freeThrowResultsAway[1]
@@ -187,8 +187,8 @@ poss = poss.toFixed(0);
 var pace = 48*poss/min;
 
 // Now, we compute efficiency and the four factors
-var effA = 100*(2*fieldGoalsMadeAway + 3ptFGMadeAway + freeThrowMadeAway)/poss;
-var efgA = 100*(fieldGoalsMadeAway + 0.5*3ptFGMadeAway)/fieldGoalsAttemptsAway;
+var effA = 100*(2*fieldGoalsMadeAway + threePointFGMadeAway + freeThrowMadeAway)/poss;
+var efgA = 100*(fieldGoalsMadeAway + 0.5*threePointFGMadeAway)/fieldGoalsAttemptsAway;
 var freeThrowResultsAway = 100*freeThrowMadeAway/fieldGoalsAttemptsAway;
 var orpA = 100*offensiveReboundsAway/(offensiveReboundsAway+drH);
 var toffensiveReboundsAway = 100*toA/poss;
