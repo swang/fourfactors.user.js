@@ -304,10 +304,12 @@ tdAux.appendChild(bold);
 aRow.appendChild(tdAux);
 tdAux = doc.createElement("td");
 if (min == 48) {
-    tdAux.textContent = pace.toFixed(1);
+  tdAux = utilityHTML.createElementWithText("td", pace.toFixed(1))
+  // tdAux.textContent = pace.toFixed(1);
 }
 else {
-    tdAux.textContent = pace.toFixed(1) + " (" + poss + ")";
+  tdAux = utilityHTML.createElementWithText("td", pace.toFixed(1) + " (" + poss + ")")
+  // tdAux.textContent = pace.toFixed(1) + " (" + poss + ")";
 }
 if (pace > paceHigh) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
@@ -316,8 +318,9 @@ if (pace > paceHigh) {
 }
 aRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = effA.toFixed(1);
+// tdAux = doc.createElement("td");
+// tdAux.textContent = effA.toFixed(1);
+tdAux = utilityHTML.createElementWithText("td",  effA.toFixed(1))
 if (effA > effHigh) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
 } else if (effA < effLow) {
@@ -325,8 +328,9 @@ if (effA > effHigh) {
 }
 aRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = efgA.toFixed(1) + "%";
+tdAux = utilityHTML.createElementWithText("td",  efgA.toFixed(1) + "%")
+// tdAux = doc.createElement("td");
+// tdAux.textContent = efgA.toFixed(1) + "%";
 if (efgA > efgHigh) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
 } else if (efgA < efgLow) {
@@ -334,8 +338,9 @@ if (efgA > efgHigh) {
 }
 aRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = freeThrowResultsAway.toFixed(1);
+// tdAux = doc.createElement("td");
+// tdAux.textContent = freeThrowResultsAway.toFixed(1);
+tdAux = utilityHTML.createElementWithText("td",  ftrA.toFixed(1))
 if (freeThrowResultsAway > ftrHigh) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
 } else if (freeThrowResultsAway < ftrLow) {
@@ -343,8 +348,9 @@ if (freeThrowResultsAway > ftrHigh) {
 }
 aRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = orpA.toFixed(1);
+// tdAux = doc.createElement("td");
+// tdAux.textContent = orpA.toFixed(1);
+tdAux = utilityHTML.createElementWithText("td",  orpA.toFixed(1))
 if (orpA > orpHigh) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
 } else if (orpA < orpLow) {
@@ -352,11 +358,13 @@ if (orpA > orpHigh) {
 }
 aRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = toffensiveReboundsAway.toFixed(1);
-if (toffensiveReboundsAway > torHigh) {
+// tdAux = doc.createElement("td");
+// tdAux.textContent = torA.toFixed(1);
+tdAux = utilityHTML.createElementWithText("td",  torA.toFixed(1))
+
+if (torA > torHigh) {
     tdAux.setAttribute('style', "background: " + colorBad + ";");
-} else if (toffensiveReboundsAway < torLow) {
+} else if (torA < torLow) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
 }
 aRow.appendChild(tdAux);
@@ -366,16 +374,18 @@ var hRow = doc.createElement("tr");
 hRow.setAttribute('align', 'center');
 tdAux = doc.createElement("td");
 tdAux.setAttribute('align', 'left');
-bold = doc.createElement("b");
-bold.textContent = homeTeam;
+// bold = doc.createElement("b");
+// bold.textContent = homeTeam;
+bold = utilityHTML.createElementWithText("b", homeTeam)
 tdAux.appendChild(bold);
 hRow.appendChild(tdAux);
 tdAux = doc.createElement("td");
 // tdAux.textContent = pace.toFixed(1);
 hRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = effH.toFixed(1);
+// tdAux = doc.createElement("td");
+// tdAux.textContent = effH.toFixed(1);
+tdAux = utilityHTML.createElementWithText("td",  effH.toFixed(1))
 if (effH > effHigh) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
 } else if (effH < effLow) {
@@ -383,8 +393,9 @@ if (effH > effHigh) {
 }
 hRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = efgH.toFixed(1) + "%";
+// tdAux = doc.createElement("td");
+// tdAux.textContent = efgH.toFixed(1) + "%";
+tdAux = utilityHTML.createElementWithText("td",  efgH.toFixed(1) + "%")
 if (efgH > efgHigh) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
 } else if (efgH < efgLow) {
@@ -392,8 +403,9 @@ if (efgH > efgHigh) {
 }
 hRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = ftrH.toFixed(1);
+// tdAux = doc.createElement("td");
+// tdAux.textContent = ftrH.toFixed(1);
+tdAux = utilityHTML.createElementWithText("td",  ftrH.toFixed(1))
 if (ftrH > ftrHigh) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
 } else if (ftrH < ftrLow) {
@@ -401,8 +413,9 @@ if (ftrH > ftrHigh) {
 }
 hRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = orpH.toFixed(1);
+// tdAux = doc.createElement("td");
+// tdAux.textContent = orpH.toFixed(1);
+tdAux = utilityHTML.createElementWithText("td",  orpH.toFixed(1))
 if (orpH > orpHigh) {
     tdAux.setAttribute('style', "background: " + colorGood + ";");
 } else if (orpH < orpLow) {
@@ -410,8 +423,9 @@ if (orpH > orpHigh) {
 }
 hRow.appendChild(tdAux);
 
-tdAux = doc.createElement("td");
-tdAux.textContent = torH.toFixed(1);
+// tdAux = doc.createElement("td");
+// tdAux.textContent = torH.toFixed(1);
+tdAux = utilityHTML.createElementWithText("td",  torH.toFixed(1))
 if (torH > torHigh) {
     tdAux.setAttribute('style', "background: " + colorBad + ";");
 } else if (torH < torLow) {
