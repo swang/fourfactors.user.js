@@ -207,12 +207,28 @@ var efgHigh = 55;   var efgLow = 45;
 var ftrHigh = 32;   var ftrLow = 18;
 var orpHigh = 34;   var orpLow = 20;
 var torHigh = 18;   var torLow = 12;
+
+utilityHTML = {
+
+  createElementWithText: function(ele, text) {
+    result = document.createElement(ele);
+    if (text !== null)
+      result.textContent = text;
+    return result;
+  }
+}
+
 var colorGood = '#C3FFC3';
 var colorBad = '#FFB6B6';
 
 var tdAux;
 var bold;
 var cellWidth = '50px';
+
+var styleSheet = document.createElement("style")
+styleSheet.type = "text/css"
+styleSheet.innerHTML = ".colorGood { color: #C3FFC3; }; .colorBad { color: #FFB6B6 };"
+document.head.appendChild(styleSheet)
 
 var factors = doc.createElement("table");
 // factors.setAttribute('align','center');
@@ -222,44 +238,56 @@ header.setAttribute('align', 'center');
 tdAux = doc.createElement("td");
 header.appendChild(tdAux);
 tdAux = doc.createElement("td");
-under = doc.createElement("u");
+// under = doc.createElement("u");
 if (min == 48) {
-    under.textContent = "Pace";
+    under = utilityHTML.createElementWithText("u", "Pace")
+    //under.textContent = "Pace";
     tdAux.setAttribute('width',cellWidth );
 }
 else {
-    under.textContent = "Pace (Poss)";
+    under = utilityHTML.createElementWithText("u", "Pace (Poss)")
+    //under.textContent = "Pace (Poss)";
     tdAux.setAttribute('width',2*cellWidth );
 }
 tdAux.appendChild(under);
 header.appendChild(tdAux);
+
 tdAux = doc.createElement("td");
-under = doc.createElement("u");
-under.textContent = "Eff";
+// under = doc.createElement("u");
+// under.textContent = "Eff";
+under = utilityHTML.createElementWithText("u", "Eff")
 tdAux.appendChild(under);
 tdAux.setAttribute('width',cellWidth );
 header.appendChild(tdAux);
 tdAux = doc.createElement("td");
-under = doc.createElement("u");
-under.textContent = "eFG";
+// under = doc.createElement("u");
+// under.textContent = "eFG";
+under = utilityHTML.createElementWithText("u", "eFG")
+
 tdAux.appendChild(under);
 tdAux.setAttribute('width',cellWidth );
 header.appendChild(tdAux);
 tdAux = doc.createElement("td");
-under = doc.createElement("u");
-under.textContent = "FT/FG";
+// under = doc.createElement("u");
+// under.textContent = "FT/FG";
+under = utilityHTML.createElementWithText("u", "FT/FG")
+
 tdAux.appendChild(under);
 tdAux.setAttribute('width',cellWidth );
 header.appendChild(tdAux);
 tdAux = doc.createElement("td");
-under = doc.createElement("u");
-under.textContent = "OREB%";
+// under = doc.createElement("u");
+// under.textContent = "OREB%";
+under = utilityHTML.createElementWithText("u", "OREB%")
+
 tdAux.appendChild(under);
 tdAux.setAttribute('width',cellWidth );
 header.appendChild(tdAux);
 tdAux = doc.createElement("td");
-under = doc.createElement("u");
-under.textContent = "TOr";
+// under = doc.createElement("u");
+// under.textContent = "TOr";
+under = utilityHTML.createElementWithText("u", "TOr")
+
 tdAux.appendChild(under);
 tdAux.setAttribute('width',cellWidth );
 header.appendChild(tdAux);
