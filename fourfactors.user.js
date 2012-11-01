@@ -102,21 +102,21 @@ var fieldGoalsResultsHome = grabMadeAttempts(fieldGoalsCellHome)
 var fieldGoalsMadeHome = fieldGoalsResultsHome[0]
 var fieldGoalsAttemptsHome = fieldGoalsResultsHome[1]
 
-var p3cH = fieldGoalsCellHome.nextSibling;
-var p3rH = grabMadeAttempts(p3cH)
-var p3mH = p3rH[0]
-var p3aH = p3rH[1]
+var threePointFGCellHome = fieldGoalsCellHome.nextSibling;
+var threePointFGResultsHome = grabMadeAttempts(threePointFGCellHome)
+var threePointFGMadeHome = threePointFGResultsHome[0]
+var threePointFGAttemptsHome = threePointFGResultsHome[1]
 
-var ftcH = p3cH.nextSibling;
-var ftrH = grabMadeAttempts(ftcH)
-var ftmH = ftrH[0]
-var ftaH = ftrH[1]
-var orcH = ftcH.nextSibling;
-var drcH = orcH.nextSibling;
-var orH = parseInt(orcH.textContent);
-var drH = parseInt(drcH.textContent);
+var freeThrowCellHome = threePointFGCellHome.nextSibling;
+var freeThrowResultsHome = grabMadeAttempts(freeThrowCellHome)
+var freeThrowMadeHome = freeThrowResultsHome[0]
+var freeThrowAttemptsHome = freeThrowResultsHome[1]
+var offensiveReboundsCellHome = freeThrowCellHome.nextSibling;
+var defensiveReboundsCellHome = offensiveReboundsCellHome.nextSibling;
+var offensiveReboundsHome = parseInt(offensiveReboundsCellHome.textContent);
+var defensiveReboundsHome = parseInt(defensiveReboundsCellHome.textContent);
 if (live) {
-  drH = drH-orH;
+  defensiveReboundsHome = defensiveReboundsHome-offensiveReboundsHome;
 }
 
 // We use total team turnovers, instead of the sum of player turnovers in the boxscore
@@ -180,7 +180,7 @@ else {
 // For possessions, we use the Hollinger formula with a 0.976 correction factor.
 //  Then we average both team estimates, and round to the nearest integer
 var possA = fieldGoalsAttemptsAway + 0.44*freeThrowAttemptsAway - offensiveReboundsAway + toA;
-var possH = fieldGoalsAttemptsHome + 0.44*ftaH - orH + toH;
+var possH = fieldGoalsAttemptsHome + 0.44*freeThrowAttemptsHome - offensiveReboundsHome + toH;
 var poss = 0.976*(possH + possA)/2;
 poss = poss.toFixed(0);
 var pace = 48*poss/min;
@@ -188,14 +188,14 @@ var pace = 48*poss/min;
 // Now, we compute efficiency and the four factors
 var effA = 100*(2*fieldGoalsMadeAway + threePointFGMadeAway + freeThrowMadeAway)/poss;
 var efgA = 100*(fieldGoalsMadeAway + 0.5*threePointFGMadeAway)/fieldGoalsAttemptsAway;
-var freeThrowResultsAway = 100*freeThrowMadeAway/fieldGoalsAttemptsAway;
-var orpA = 100*offensiveReboundsAway/(offensiveReboundsAway+drH);
-var toffensiveReboundsAway = 100*toA/poss;
+var ftrA = 100*freeThrowMadeAway/fieldGoalsAttemptsAway;
+var orpA = 100*offensiveReboundsAway/(offensiveReboundsAway+defensiveReboundsHome);
+var torA = 100*toA/poss;
 
-var effH = 100*(2*fieldGoalsMadeHome + p3mH + ftmH)/poss;
-var efgH = 100*(fieldGoalsMadeHome + 0.5*p3mH)/fieldGoalsAttemptsHome;
-var ftrH = 100*ftmH/fieldGoalsAttemptsHome;
-var orpH = 100*orH/(orH+defensiveReboundsAway);
+var effH = 100*(2*fieldGoalsMadeHome + threePointFGMadeHome + freeThrowMadeHome)/poss;
+var efgH = 100*(fieldGoalsMadeHome + 0.5*threePointFGMadeHome)/fieldGoalsAttemptsHome;
+var ftrH = 100*freeThrowMadeHome/fieldGoalsAttemptsHome;
+var orpH = 100*offensiveReboundsHome/(offensiveReboundsHome+defensiveReboundsAway);
 var torH = 100*toH/poss;
 
 // Finally, we create the table, rows and cells where data will be displayed.
