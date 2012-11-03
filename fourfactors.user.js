@@ -182,8 +182,7 @@ else {
 var possA = fieldGoalsAttemptsAway + 0.44*freeThrowAttemptsAway - offensiveReboundsAway + toA;
 var possH = fieldGoalsAttemptsHome + 0.44*freeThrowAttemptsHome - offensiveReboundsHome + toH;
 var poss = 0.976*(possH + possA)/2;
-poss = poss.toFixed(0);
-var pace = 48*poss/min;
+var pace = (48*poss/min).toFixed(0);
 
 // Now, we compute efficiency and the four factors
 var effA = 100*(2*fieldGoalsMadeAway + threePointFGMadeAway + freeThrowMadeAway)/poss;
