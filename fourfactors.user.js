@@ -284,7 +284,7 @@ var aRow = utilityHTML.createEle("tr", { align: 'center' })
 
 tdAux = utilityHTML.createEle("td", {align: 'left', "class": 'team' })
 
-bold = utilityHTML.createElement("b", {}, awayTeam);
+bold = utilityHTML.createEle("b", {}, awayTeam);
 
 tdAux.appendChild(bold);
 aRow.appendChild(tdAux);
@@ -344,7 +344,7 @@ if (torA > torHigh) {
 aRow.appendChild(tdAux);
 
 // Home team
-var hRow = utilityHTML.createElement("tr", { align: "center" });
+var hRow = utilityHTML.createEle("tr", { align: "center" });
 
 tdAux = utilityHTML.createEle("td", { align: "left" });
 bold = utilityHTML.createEle("b", {}, homeTeam)
